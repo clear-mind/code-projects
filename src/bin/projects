@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+"use strict";
+
+const path = require("path");
+const args = process.argv.slice(2);
+const main = require("../index");
+const verb = args[0];
+
+const os = require('os');
+
+const home = os.homedir();
+const projectsPath = home + "/projects";
+
+(async () => {
+    switch (verb) {
+        case "scan":
+            await main.scan(path.resolve(projectsPath));
+            break;
+
+        case "push":
+            await main.push(path.resolve(projectsPath), args[1]);
+            break;
+
+        case "pull":
+            await main.pull(path.resolve(projectsPath), args[1]);
+            break;
+
+        case "list":
+            await main.list();
+            break;
+
+        default:
+            break;
+    }
+
+    process.exit(0);
+})();
