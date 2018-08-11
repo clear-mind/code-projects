@@ -31,7 +31,7 @@ const injectForPath = async (source, name, version, dest) => {
 };
 
 const getStoragePath = projectPath => {
-    return projectPath.replace("/projects/", "/projects/.projects/");
+    return projectPath.replace("/projects/", "/projects/_projects/");
 };
 
 const getProjectsPath = projectPath => {
@@ -50,3 +50,4 @@ module.exports = {
     getStoragePath,
     getProjectsPath
 };
+ 
