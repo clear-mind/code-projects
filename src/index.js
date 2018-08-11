@@ -16,8 +16,6 @@ const scan = async dir => {
     if (err) return log.error(`error reading packages in ${dir}`);
     log.log(`✓`);
 
-    console.log(packages);
-
     log.log(`Saving configuration... `);
     store.set("packages", packages);
     log.log(`✓`);
