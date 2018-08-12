@@ -1,0 +1,36 @@
+.App {
+  font-family: "Lato", sans-serif; }
+  .App .projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px; }
+    .App .projects .project {
+      margin: 15px 10px;
+      padding: 0 10px;
+      width: 250px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 10px;
+      border: 1px solid gray;
+      box-sizing: border-box;
+      position: relative;
+      cursor: pointer; }
+      .App .projects .project:hover {
+        background-color: #fff3f5; }
+      .App .projects .project.green {
+        box-shadow: 0 0 5px 5px rgba(0, 200, 0, 0.1);
+        border: 1px solid green;
+        background-color: #e9ffc8; }
+      .App .projects .project .title {
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px; }
+      .App .projects .project .version {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        color: gray;
+        font-size: 12px; }

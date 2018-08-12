@@ -42,12 +42,25 @@ const getProjectsPath = projectPath => {
     return parts.join("/");
 };
 
+const checkProjectsLocation = projects => {
+    return projects.map(project => {
+        const projectsPath = project.path;
+        const storagePath = getStoragePath(projectsPath);
+
+        project.inProjects = file.folderExists(projectsPath);
+        project.inStorage = file.folderExists(storagePath);
+
+        return project;
+    })
+};
+
 module.exports = {
     whoNeedsThisPackages,
     installForPath,
     upgradePackageJson,
     injectForPath,
     getStoragePath,
-    getProjectsPath
+    getProjectsPath,
+    checkProjectsLocation
 };
  

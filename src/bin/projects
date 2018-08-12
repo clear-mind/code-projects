@@ -3,7 +3,7 @@
 
 const path = require("path");
 const args = process.argv.slice(2);
-const main = require("../index");
+const main = require("../cli/cli");
 const verb = args[0];
 
 const os = require('os');
@@ -28,6 +28,10 @@ const projectsPath = home + "/projects";
         case "list":
             await main.list();
             break;
+
+        case "open":
+            await main.open();
+            return;
 
         default:
             break;
